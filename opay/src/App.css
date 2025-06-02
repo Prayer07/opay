@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.homepage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-color: black;
+}
+
+.homepage-container{
+    background-color: rgba(255, 255, 255, 0.905);
+    margin: 20px;
+    border-radius: 5px;
+    height: 70dvh;
+    padding: 2px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.homepage-container nav{
+    margin-top: 15px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage button{
+    color: green;
+    outline: green;
+    border: 1px solid green;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2px;
+    width: 55px;
+    margin-left: 4px;
+}
+
+.homepage img{
+    margin-left: 20px;
+}
+
+.dashboard{
+    margin-top: 10px;
+    background-color: green;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dashboard img{
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.transaction{
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance{
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance button{
+    height: 25px;
+    width: 70px;
+    font-size: 9px;
+}
+
+.withdraw{
+    padding-right: 10px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.withdraw-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bills{
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.bills-container{
+    margin-left: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-right: 10px;
+}
+
+.bills-container2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-color: black;
+}
+
+.signup-container{
+    background-color: rgba(255, 255, 255, 0.905);
+    border-radius: 5px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.signup-container input{
+    margin-left: 15px;
+    margin-top: 20px;
+    padding: 7px 30px;
+    border-radius: 20px;
+    border: none;
+    outline-color: green;
+}
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button{
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.signup-container button{
+    margin: 20px;
+    margin-left: 20px;
+    padding: 5px 65px;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
+.signup p{
+    padding-left: 30px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-color: black;
+}
+
+.login-container{
+    padding-top: 8px;
+    background-color: rgba(255, 255, 255, 0.905);
+    border-radius: 5px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.login-container input{
+    margin-left: 15px;
+    margin-top: 20px;
+    padding: 7px 30px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    outline-color: green;
+}
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button{
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.login-container button{
+    margin: 20px;
+    margin-left: 50px;
+    padding: 5px 65px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
+.login p{
+    /* padding-left: 30px; */
+    /* margin-top: 5px; */
+    /* font-size: 12px; */
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.logout button{
+    margin-top: 20px;
+    border-radius: 2px;
+}
