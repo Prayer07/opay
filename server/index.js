@@ -3,7 +3,10 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import cors from "cors"
 import userRouter from "./routes/user.route.js"
+import dotenv from "dotenv"
 
+
+dotenv.config()
 const app = express()
 const port = 3000
 
@@ -14,7 +17,7 @@ app.use(bodyParser.json())
 //routes
 app.use("/", userRouter)
 
-mongoose.connect("mongodb+srv://Prince:O1N1Zy4Nt4Scvlrj@prince.jusnjgb.mongodb.net/?retryWrites=true&w=majority&appName=Prince")
+mongoose.connect(process.env.MONGO_URI)
 .then(() =>{
     console.log("Connected!")
     app.listen(port, () =>{
