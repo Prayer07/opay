@@ -80,9 +80,6 @@ function Signup() {
 
       if(res.ok){
         alert(data.message)
-        // localStorage.setItem("isLoggedIn", "true")
-        localStorage.setItem("phone", user.phone)
-        // localStorage.setItem("fname", user.fname)
         navigate("/login")
       }else{
         setMessage({general: data.message})
@@ -107,15 +104,16 @@ function Signup() {
           <input type="text" placeholder='LastName' onChange={handleChange} name='lname' value={user.lname} /> <br />
           <p> {message.lname} </p>
 
-          <input className='number' type="number" placeholder='Phone No.' onChange={handleChange} name='phone' value={user.phone} /> <br />
+          <input className='number' type="text" inputMode='numeric' pattern='[0-9]{10}' placeholder='Phone No.' onChange={handleChange} name='phone' value={user.phone} maxLength={10} /> <br />
           <p> {message.phone} </p>
+          <p style={{color:"red"}} > {message.general} </p>
 
           <input className='number' type="password" inputMode='numeric' pattern='[0-9]{6}' placeholder='6 digit password' onChange={handleChange} name='password' value={user.password} maxLength={6} /> <br />
           <p> {message.password} </p>
 
           <button>Create Account</button>
         </form>
-        <p style={{textAlign:"center", fontSize:"15px", marginBottom:"10px"}} ><Link to={"/login"} >Already have an account?...Login</Link></p>
+        <p style={{textAlign:"center", fontSize:"15px", marginBottom:"10px"}} ><Link to={"/login"} style={{paddingRight:"24px"}} >Already have an account?...Login</Link></p>
         
         </div>
       </div>

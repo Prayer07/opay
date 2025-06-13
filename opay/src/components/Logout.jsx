@@ -5,16 +5,18 @@ import { useNavigate } from 'react-router-dom'
 function Logout() {
 
     const navigate = useNavigate()
+    
     const handleLogout = () =>{
-        localStorage.removeItem("isLoggedIn")
-        localStorage.removeItem("fname")
+        sessionStorage.clear()
         navigate("/login")
     }
 
   return (
     <>
     <div className="logout">
-    <button onClick={handleLogout} >Logout</button>
+      <div className="logout-container">
+        <button onClick={handleLogout} >Logout</button>
+      </div>
     </div>
     </>
   )

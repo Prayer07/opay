@@ -3,19 +3,27 @@
     margin: 0;
 }
 
+body{
+    text-decoration: none;
+    background-color: antiquewhite;
+}
+
 .homepage{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
-    background-color: black;
+    height: auto;
+    /* background-color: black; */
+    text-decoration: none;
 }
 
 .homepage-container{
-    background-color: rgba(255, 255, 255, 0.905);
+    width: 500px;
+    box-shadow: 2px 2px 2px 4px rgb(210, 206, 206);
+    background-color: rgba(242, 237, 237, 0.905);
     margin: 20px;
     border-radius: 5px;
-    height: 70dvh;
+    height: auto;
     padding: 2px;
     padding-left: 30px;
     padding-right: 30px;
@@ -37,6 +45,7 @@
     padding: 2px;
     width: 55px;
     margin-left: 4px;
+    cursor: pointer;
 }
 
 .homepage img{
@@ -46,9 +55,12 @@
 .dashboard{
     margin-top: 10px;
     background-color: green;
+    box-shadow: 2px 2px 2px 2px rgb(7, 99, 33);
     justify-content: space-between;
     padding: 5px;
     border-radius: 5px;
+    height: 70px;
+    padding: 20px;
 }
 
 .dashboard img{
@@ -58,12 +70,14 @@
 }
 
 .transaction{
+    /* margin-top: 6px; */
     padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
 }
 
 .balance{
+    margin-top: 9px;
     padding-left: 5px;
     display: flex;
     justify-content: space-between;
@@ -73,40 +87,49 @@
     height: 25px;
     width: 70px;
     font-size: 9px;
+    cursor: pointer;
 }
 
 .withdraw{
+    box-shadow: 2px 2px 2px 2px rgb(210, 206, 206);
     padding-right: 10px;
     background-color: white;
     margin-top: 10px;
     border-radius: 5px;
     padding-bottom: 5px;
     padding-top: 5px;
+    margin-top: 15px;
+    height: 80px;
 }
 
 .withdraw-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
 }
 
 .bills{
+    box-shadow: 2px 2px 2px 2px rgb(210, 206, 206);
     background-color: white;
     margin-top: 10px;
     border-radius: 5px;
     padding-bottom: 5px;
     padding-top: 5px;
+    margin-top: 15px;
 }
 
-.bills-container{
-    margin-left: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-right: 10px;
+
+.bill-container1{
+    display: flex;
+    justify-content: space-between;
+
 }
 
-.bills-container2{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.bill-container2{
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .signup{
@@ -114,7 +137,7 @@
     justify-content: center;
     align-items: center;
     height: 100dvh;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .signup-container{
@@ -124,9 +147,11 @@
     display: flex;
     justify-content: center;
     height: auto;
+    box-shadow: 2px 2px 2px 4px rgb(210, 206, 206);
 }
 
 .signup-container input{
+    background-color: rgb(190, 187, 187);
     margin-left: 15px;
     margin-top: 20px;
     padding: 7px 30px;
@@ -141,6 +166,7 @@
 }
 
 .signup-container button{
+    cursor: pointer;
     margin: 20px;
     margin-left: 20px;
     padding: 5px 65px;
@@ -161,7 +187,7 @@
     justify-content: center;
     align-items: center;
     height: 100dvh;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .login-container{
@@ -172,9 +198,12 @@
     display: flex;
     justify-content: center;
     height: auto;
+    box-shadow: 2px 2px 2px 4px rgb(210, 206, 206);
+
 }
 
 .login-container input{
+    background-color: rgb(190, 187, 187);
     margin-left: 15px;
     margin-top: 20px;
     padding: 7px 30px;
@@ -190,6 +219,7 @@
 }
 
 .login-container button{
+    cursor: pointer;
     margin: 20px;
     margin-left: 50px;
     padding: 5px 65px;
@@ -208,7 +238,59 @@
     padding-bottom: 20px;
 }
 
+.logout-container{
+    display: flex;
+    justify-content: center;
+}
+
 .logout button{
+    cursor: pointer;
     margin-top: 20px;
     border-radius: 2px;
+    width: 100px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+.logout button:hover{
+    background-color: green;
+    color: white;
+}
+.logout button:active{
+    background-color: white;
+    color: green;
+}
+
+.add-money1{
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    height: 100dvh;
+    align-items: center;
+}
+.add-money-container{
+    border: 1px solid white;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.905);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 4px rgb(210, 206, 206);
+}
+.add-money-container input{
+    background-color: rgb(190, 187, 187);
+    padding: 7px 30px;
+    border-radius: 5px;
+    border: none;
+    outline-color: wheat;
+    margin-bottom: 5px;
+}
+.add-money-container button{
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    cursor: pointer;
+}
+.add-money-container button:hover{
+    background-color: rgb(1, 94, 22);
+}
+.add-money-container button:active{
+    background-color: rgb(1, 132, 32);
 }

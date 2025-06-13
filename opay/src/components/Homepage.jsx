@@ -6,23 +6,24 @@ import scanner from "../assets/scanner.png"
 import Money from './Money'
 import Withdraw from './Withdraw'
 import Bills from './Bills'
+import plus from "../assets/plus2.png"
 
 function Homepage() {
   return (
     <>
     <div className="homepage">
-      <div className="homepage-container">
+      <div className="homepage-container" style={{paddingBottom:30}} >
         <nav>
           <div className="logo">
-            <p style={{fontSize:"12px"}}>Hi <Link to={"/login"}> <button style={{fontSize:"12px", fontWeight:"bold"}} >Login</button> </Link> </p>
+            <p style={{fontSize:"16px"}}>Hi <Link to={"/login"}> <button style={{fontSize:"14px", fontWeight:"bold"}} >Login</button> </Link> </p>
           </div>
           <div className="img">
-          <img src={headphones} alt='bell' width={13} height={13} />
-          <img src={scanner} alt='bell' width={13} height={13} />
-          <img src={bell} alt='bell' width={13} height={13} />
+          <img src={headphones} alt='bell' width={16} height={16} />
+          <img src={scanner} alt='bell' width={16} height={16} />
+          <img src={bell} alt='bell' width={16} height={16} />
           </div>
         </nav>
-        <Money bal = "****"/>
+        <Money bal = "****" demo = {"Add Money"} plus = {plus}/>
         <Withdraw/>
         <Bills/>
       </div>

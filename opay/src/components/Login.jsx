@@ -48,9 +48,8 @@ function Login() {
 
       if(res.ok){
         setMessage("Login Successfully")
-        localStorage.setItem("isLoggedIn","true")
-        localStorage.setItem("phone", user.phone)
-        // localStorage.setItem("fname", user.fname)
+        sessionStorage.setItem("token", data.token)
+        // sessionStorage.setItem("user", JSON.stringify(data.user))
         navigate("/dashboard")
       }else{
         setError(data.message || "Login failed")
@@ -69,13 +68,13 @@ function Login() {
         <div className="box">
           <h1 style={{textAlign:"center"}} >Login</h1>
           <form onSubmit={handleSubmit}>
-            <input type="text" className='number' inputMode='numeric' pattern='[0-9]{11}' placeholder='Phone No' name='phone' value={user.phone} onChange={handleChange} maxLength={11} /> <br />
-            <input type="password" className='number' inputMode='numeric' pattern='[0-9]{6}' placeholder='6 digit password' name='password' value={user.password} onChange={handleChange} maxLength={6} /> <br />
+            <input type="text" inputMode='numeric' pattern='[0-9]{10}' placeholder='Phone No' name='phone' value={user.phone} onChange={handleChange} maxLength={10} /> <br />
+            <input type="password" inputMode='numeric' pattern='[0-9]{6}' placeholder='6 digit password' name='password' value={user.password} onChange={handleChange} maxLength={6} /> <br />
             <button>Login</button>
             {error && <p style={{color:"red"}}> {error} </p>}
             {message && <p style={{color:"green"}}> {message} </p>}
           </form>
-          <p><Link to={"/signup"} >Don't have an account?...SignUp</Link></p>
+          <p><Link to={"/signup"} >Don't have an account..?...SignUp</Link></p>
         </div>
       </div>
     </div>

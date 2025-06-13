@@ -1,4 +1,23 @@
 import mongoose from "mongoose";
+
+const transactionsSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        enum: ["withdrawal", "transfer", "received", "deposit"],
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    to: String,
+    from: String,
+    date: {
+        type: Date,
+        default: Date.now
+    }
+})
+
 const OpaySchema = mongoose.Schema (
     {
         fname: {
@@ -25,6 +44,7 @@ const OpaySchema = mongoose.Schema (
             type: Number,
             default: 0
         },
+        transactions: [transactionsSchema]
     },
     {
         timestamps: true,

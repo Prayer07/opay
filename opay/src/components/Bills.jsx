@@ -12,39 +12,48 @@ function Bills() {
   return (
     <>
     <div className="bills">
-      <div className="bills-container">
-        <div className="icon1">
-          <img src={airtime} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"7px", textAlign:"center"}}>Airtime</p>
+      <div className="bills-container" style={{margin:30}} >
+
+        <div className="bill-container1">
+          <div className="icon1">
+          <img src={airtime} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"20px"}}>Airtime</p>
+          </div>
+          <div className="icon2">
+          <img src={data} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"29px"}}>Data</p>
+          </div>
+          <div className="icon3">
+          <img src={tv} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"33px"}}>TV</p>
+          </div>
+          <div className="icon4">
+          <img src={light} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"18px"}}>Electricity</p>
+          </div>
+        </div> 
+
+
+        <div className="bill-container2">
+          <div className="icon">
+          <img src={money} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"8px",}}>Refer & Earn</p>
+          </div>
+          <div className="icon2">
+          <img src={checkIn} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"20px"}}>Check-In</p>
+          </div>
+          <div className="icon3">
+          <img src={pay} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"20px"}}>Financial</p>
+          </div>
+          <div className="icon4">
+          <img src={more} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
+          <p style={{fontSize:"11px", marginLeft:"27px"}}>More</p>
+          </div>
         </div>
-        <div className="icon2">
-          <img src={data} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"7px", textAlign:"center"}}>Data</p>
-        </div>
-        <div className="icon3">
-          <img src={tv} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"8px", textAlign:"center"}}>TV</p>
-        </div>
-        <div className="icon4">
-          <img src={light} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"8px", textAlign:"center"}}>Electricity</p>
-        </div>
-        <div className="icon1">
-          <img src={money} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px",marginLeft:"8px",  textAlign:"center"}}>Refer & Earn</p>
-        </div>
-        <div className="icon2">
-          <img src={checkIn} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"8px", textAlign:"center"}}>Check-In</p>
-        </div>
-        <div className="icon3">
-          <img src={pay} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"9px", textAlign:"center"}}>Financial</p>
-        </div>
-        <div className="icon4">
-          <img src={more} alt='contact' width={15} height={15} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"8px", marginLeft:"9px", textAlign:"center"}}>More</p>
-        </div>
+
+
       </div>
     </div>
     </>
