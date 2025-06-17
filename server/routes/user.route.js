@@ -3,6 +3,7 @@ import Opay from "../models/user.model.js"
 import { signup, login, addMoney, withdraw, transfer, dashboard, userInfo, getTransactions} from "../controllers/user.controller.js"
 import { authenticateToken } from "../middleware/authMiddleware.js"
 import { verifyToken } from "../middleware/auth.js"
+
 const router = express.Router()
 
 router.post("/signup",signup)

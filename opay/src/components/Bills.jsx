@@ -7,57 +7,150 @@ import money from "../assets/money.png"
 import checkIn from "../assets/check-mark.png"
 import pay from "../assets/pay.png"
 import more from "../assets/more.png"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 function Bills() {
   return (
     <>
-    <div className="bills">
-      <div className="bills-container" style={{margin:30}} >
+    <div className="Bills">
+        <div className="bills">          
+          <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Airtime
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
 
-        <div className="bill-container1">
-          <div className="icon1">
-          <img src={airtime} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"20px"}}>Airtime</p>
-          </div>
-          <div className="icon2">
-          <img src={data} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"29px"}}>Data</p>
-          </div>
-          <div className="icon3">
-          <img src={tv} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"33px"}}>TV</p>
-          </div>
-          <div className="icon4">
-          <img src={light} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"18px"}}>Electricity</p>
-          </div>
-        </div> 
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Data
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
 
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            TV
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
 
-        <div className="bill-container2">
-          <div className="icon">
-          <img src={money} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"8px",}}>Refer & Earn</p>
-          </div>
-          <div className="icon2">
-          <img src={checkIn} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"20px"}}>Check-In</p>
-          </div>
-          <div className="icon3">
-          <img src={pay} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"20px"}}>Financial</p>
-          </div>
-          <div className="icon4">
-          <img src={more} alt='contact' width={35} height={35} style={{backgroundColor:"rgb(185, 247, 217)", marginTop:"4px" , padding:"4px", borderRadius:"5px"}} />
-          <p style={{fontSize:"11px", marginLeft:"27px"}}>More</p>
-          </div>
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Electricity
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
+
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Refer & Earn
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
+
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Check In
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
+
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            Financial
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
+
+        <Card>
+        <CardContent>
+          <p>
+          <Button>
+            More
+          </Button>
+          </p>
+        </CardContent>
+        </Card>
         </div>
 
-
-      </div>
     </div>
     </>
   )
 }
+
+{/* <div className="Bills-container">
+
+        <div className="bills-container1">
+          <div className="icon">
+          <img src={airtime} alt='contact'/>
+          <p>Airtime</p>
+          </div>
+          <div className="icon">
+          <img src={data} alt='contact' />
+          <p>Data</p>
+          </div>
+          <div className="icon">
+          <img src={tv} alt='contact' />
+          <p>Television</p>
+          </div>
+          <div className="icon">
+          <img src={light} alt='contact' />
+          <p>Electricity</p>
+          </div>
+        </div> 
+
+
+        <div className="bills-container2">
+          <div className="icon">
+          <img src={money} alt='contact' />
+          <p>Refer & <br /> Earn</p>
+          </div>
+          <div className="icon">
+          <img src={checkIn} alt='contact' />
+          <p>Check-In</p>
+          </div>
+          <div className="icon">
+          <img src={pay} alt='contact' />
+          <p>Financial</p>
+          </div>
+          <div className="icon">
+          <img src={more} alt='contact'/>
+          <p>More</p>
+          </div>
+        </div>
+
+
+      </div> */}
 
 export default Bills

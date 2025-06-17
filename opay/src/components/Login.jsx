@@ -1,5 +1,17 @@
 import React, { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  // CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 
 function Login() {
 
@@ -64,20 +76,54 @@ function Login() {
   return (
     <>
     <div className="login">
-      <div className="login-container">
-        <div className="box">
-          <h1 style={{textAlign:"center"}} >Login</h1>
-          <form onSubmit={handleSubmit}>
-            <input type="text" inputMode='numeric' pattern='[0-9]{10}' placeholder='Phone No' name='phone' value={user.phone} onChange={handleChange} maxLength={10} /> <br />
-            <input type="password" inputMode='numeric' pattern='[0-9]{6}' placeholder='6 digit password' name='password' value={user.password} onChange={handleChange} maxLength={6} /> <br />
-            <button>Login</button>
+      <Card className="w-full max-w-sm">
+      <CardHeader>
+        <CardTitle>Login to your account</CardTitle>
+        <CardDescription>
+          Enter your Phone number below to login to your account
+        </CardDescription>
+        <CardAction>
+          <Link to={"/signup"}>
+          <Button>Sign Up</Button>
+          </Link>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Phone Number</Label>
+              <Input type="text" inputMode='numeric' pattern='[0-9]{10}'
+              placeholder='Phone No' name='phone'
+              value={user.phone} onChange={handleChange} maxLength={10} />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <a
+                  href="#"
+                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+              <Input type="password" inputMode='numeric' pattern='[0-9]{6}' 
+              placeholder='6 digit password' name='password' value={user.password}
+              onChange={handleChange} maxLength={6} />
+            </div>
+          </div>
+
             {error && <p style={{color:"red"}}> {error} </p>}
-            {message && <p style={{color:"green"}}> {message} </p>}
-          </form>
-          <p><Link to={"/signup"} >Don't have an account..?...SignUp</Link></p>
-        </div>
-      </div>
+            {message && <p style={{color:"green"}}> {message} </p>} <br />
+
+            <Button type="submit"  className="w-full">
+              Login
+            </Button> <br />
+        </form>
+      </CardContent>
+    </Card>
     </div>
+    
     </>
   )
 }

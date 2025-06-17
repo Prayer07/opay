@@ -1,5 +1,17 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  // CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 
 function Signup() {
 
@@ -93,7 +105,71 @@ function Signup() {
 
   return (
     <>
-    <div className="signup">
+            <div className="login">
+              <Card className="w-full max-w-sm">
+              <CardHeader>
+                <CardTitle>Create your account</CardTitle>
+                <CardDescription>
+                  Fill in all fields to create account
+                </CardDescription>
+                <CardAction>
+                  <Link to={"/login"}>
+                  <Button>Login</Button>
+                  </Link>
+                </CardAction>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-6">
+                    <div className="grid gap-2">
+                      <Label htmlFor="email">First Name</Label>
+                      <Input type="text" placeholder='FirstName' onChange={handleChange}
+                      name='fname' value={user.fname} />
+                      <p style={{color:"red"}}> {message.fname} </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="email">Last Name</Label>
+                      <Input type="text" placeholder='LastName' onChange={handleChange}
+                      name='lname' value={user.lname} />
+                      <p style={{color:"red"}}> {message.lname} </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="email">Phone Number</Label>
+                      <Input type="text" inputMode='numeric' pattern='[0-9]{10}'
+                      placeholder='Phone No' name='phone'
+                      value={user.phone} onChange={handleChange} maxLength={10} />
+                      <p style={{color:"red"}}>{message.phone}</p>
+                      <p style={{color:"red"}} > {message.general} </p>
+
+                    </div>
+                    <div className="grid gap-2">
+                      <div className="flex items-center">
+                        <Label htmlFor="password">Password</Label>
+                        <a
+                          href="#"
+                          className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                        >
+                          Forgot your password?
+                        </a>
+                      </div>
+                      <Input type="password" inputMode='numeric' pattern='[0-9]{6}' 
+                      placeholder='6 digit password' name='password' value={user.password}
+                      onChange={handleChange} maxLength={6} />
+                      <p style={{color:"red"}}>{message.password}</p>
+                    </div>
+                  </div> <br /> 
+                    <Button type="submit"  className="w-full">
+                      Sign up
+                    </Button> <br />
+                </form>
+              </CardContent>
+            </Card>
+          </div>      
+    </>
+  )
+}
+
+{/* <div className="signup">
       <div className="signup-container">
         <div className="box" style={{marginTop:"10px"}} >
         <h1 style={{textAlign:"center"}} >Sign up</h1>
@@ -117,9 +193,6 @@ function Signup() {
         
         </div>
       </div>
-    </div>
-    </>
-  )
-}
+    </div> */}
 
 export default Signup

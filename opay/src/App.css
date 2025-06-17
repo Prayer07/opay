@@ -1,4 +1,77 @@
-*{
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.Dashboard{
+    width: 100%;
+}
+.Dashboard h4{
+    font-size: 4dvh;
+}
+
+.trans{
+    display: flex;
+    justify-content: space-between;
+}
+.trans p{
+    font-size: 3dvh;
+}
+#transaction:hover{
+    font-weight: bolder;
+}
+
+.money{
+    display: flex;
+    justify-content: space-between;
+}
+
+.money p{
+    font-size: 3dvh;
+    font-weight: bolder;
+}
+
+.withdraw-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bills{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(135px,1fr));
+    gap: 10px;
+}
+.bills p{
+    text-align: center;
+}
+
+.transHistory h1{
+    font-size: 4dvh;
+    text-align: center;
+    margin: 30px;
+}
+.transHistory li{
+    text-align: center;
+}
+
+.add-money1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.transfer1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -104,19 +177,17 @@ body{
     height: 50px;
     background-color: rgb(45, 232, 126);
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 .Bills-container img:hover{
     background-color: rgb(21, 203, 100);
 }
-.bills-container1{
-    display: flex;
-    justify-content: space-evenly;
+.Bills-container{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    
 }
-.bills-container2{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 .bills-container1 .icon{
     margin: 30px;
 }
@@ -126,32 +197,32 @@ body{
 
 @media (max-width: 575.98px) {}
 
-/* // `md` applies to small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {}
+// `md` applies to small devices (landscape phones, less than 768px) */
+/* @media (max-width: 767.98px) {} */
 
 /* // `lg` applies to medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {}
+/* @media (max-width: 991.98px) {} */
 
 /* // `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { }
+/* @media (max-width: 1199.98px) { } */
 
 /* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
-@media (max-width: 1399.98px) { }
+/* @media (max-width: 1399.98px) { } */
 
 /* // X-Small devices (portrait phones, less than 576px) */
 /* // No media query for `xs` since this is the default in Bootstrap */
 
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { }
+/* @media (min-width: 576px) { } */
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+/* @media (min-width: 768px) { } */
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { }
+/* @media (min-width: 992px) { } */
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { }
+/* @media (min-width: 1200px) { } */
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {  }
+/* @media (min-width: 1400px) {  } */

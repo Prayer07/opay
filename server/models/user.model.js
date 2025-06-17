@@ -44,7 +44,12 @@ const OpaySchema = mongoose.Schema (
             type: Number,
             default: 0
         },
-        transactions: [transactionsSchema]
+        transactions: [transactionsSchema],
+
+        isAdmin: {
+            type: Boolean,
+            default: false
+        }
     },
     {
         timestamps: true,

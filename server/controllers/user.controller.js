@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 import Opay from "../models/user.model.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import { connectedUsers } from "../utils/socketStore.js";
 
 dotenv.config()
 
@@ -150,6 +151,8 @@ const withdraw = async (req, res) =>{
 }
 
 const transfer = async (req, res) =>{
+    const io = req.app.get('io')
+
     const {receiverPhone, amount} = req.body
 
     const senderPhone = req.user.phone
@@ -198,6 +201,22 @@ const transfer = async (req, res) =>{
 
         await sender.save()
         await receiver.save()
+
+        const senderSocketId = connectedUsers.get(senderPhone)
+        const receiverSocketId = connectedUsers.get(receiverPhone)
+
+        if (senderSocketId){
+            io.to(senderSocketId).emit("refreshUserData")
+            console.log("📥 Receiver socket ID:", receiverSocketId)
+        }
+
+        if (receiverSocketId){
+            io.to(receiverSocketId).emit("refreshUserData")
+            console.log("📤 Sender socket ID:", senderSocketId) 
+        }
+
+
+
 
         res.status(200).json({message: "Transfer Successful", newBalance: sender.balance})
 

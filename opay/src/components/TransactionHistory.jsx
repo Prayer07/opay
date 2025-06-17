@@ -1,15 +1,27 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 function TransactionHistory() {
 
     const [transactions, setTransactions] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() =>{
         const fetchTransactions = async () =>{
             const token = sessionStorage.getItem("token")
             if(!token) return alert("Login required")
+
+                setLoading(true)
 
             try {
                 const res = await fetch("http://localhost:3000/transactions", {
@@ -28,6 +40,8 @@ function TransactionHistory() {
 
             } catch (error) {
                 alert("Error fetching transaction history")
+            }finally{
+                setLoading(false)
             }
         }
 
@@ -37,8 +51,11 @@ function TransactionHistory() {
 
   return (
     <>
-    <h2>Transaction History</h2>
-    {transactions.length === 0 ? (
+    <div className="transHistory">
+        <h1>Transaction History</h1>
+        <Card>
+        <CardContent>
+            {transactions.length === 0 ? (
         <p>No transactions yet</p>
     ) : (
         <ul>
@@ -56,6 +73,10 @@ function TransactionHistory() {
             ))}
         </ul>
     ) }
+    {loading && <p>Loading....</p>}
+        </CardContent>
+    </Card>
+    </div>
     </>
   )
 }
