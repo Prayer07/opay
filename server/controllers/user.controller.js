@@ -1,8 +1,9 @@
+import axios from "axios"
 import dotenv from "dotenv"
 import Opay from "../models/user.model.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-import { connectedUsers } from "../utils/socketStore.js";
+// import { connectedUsers } from "../utils/socketStore.js";
 
 dotenv.config()
 
@@ -151,7 +152,6 @@ const withdraw = async (req, res) =>{
 }
 
 const transfer = async (req, res) =>{
-    const io = req.app.get('io')
 
     const {receiverPhone, amount} = req.body
 
@@ -202,22 +202,6 @@ const transfer = async (req, res) =>{
         await sender.save()
         await receiver.save()
 
-        const senderSocketId = connectedUsers.get(senderPhone)
-        const receiverSocketId = connectedUsers.get(receiverPhone)
-
-        if (senderSocketId){
-            io.to(senderSocketId).emit("refreshUserData")
-            console.log("📥 Receiver socket ID:", receiverSocketId)
-        }
-
-        if (receiverSocketId){
-            io.to(receiverSocketId).emit("refreshUserData")
-            console.log("📤 Sender socket ID:", senderSocketId) 
-        }
-
-
-
-
         res.status(200).json({message: "Transfer Successful", newBalance: sender.balance})
 
     } catch (err) {
@@ -260,4 +244,39 @@ const getTransactions = async (req, res) =>{
     }
 }
 
-export {signup,login,dashboard,addMoney,withdraw,transfer,userInfo,getTransactions}
+const changePassword = async (req, res) =>{
+
+    const {currentPassword, newPassword, confirmPassword} = req.body
+    const phone = req.user.phone
+
+    if(!currentPassword || !newPassword || !confirmPassword){
+        return res.status(400).json({message: "All field are required"})
+    }
+
+    if(newPassword !== confirmPassword){
+        return res.status(400).json({message: "New passwords do not match"})
+    }
+
+    try {
+        const user = await Opay.findOne({phone})
+
+        if(!user) return res.status(404).json({message: "User not found"})
+
+        const isMatch = await bcrypt.compare(currentPassword, user.password)
+        if(!isMatch) return res.status(401).json({message: "Incorrect current password"})
+        
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(newPassword, salt)
+
+        user.password = hashedPassword;
+        await user.save()
+
+        res.status(200).json({message: "Password changed successfully"})
+
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({message: "Server error"})
+    }
+}
+
+export {signup, login, dashboard, addMoney, withdraw, transfer, userInfo, getTransactions, changePassword}

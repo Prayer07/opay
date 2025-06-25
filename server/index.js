@@ -5,6 +5,7 @@ import cors from "cors"
 import userRouter from "./routes/user.route.js"
 import adminRouter from "./routes/admin.route.js"
 import dotenv from "dotenv"
+import paystackRouter from "./routes/paystack.route.js"
 // import http from "http"
 // import { Server } from "socket.io"
 // import { connectedUsers } from "./utils/socketStore.js"
@@ -53,7 +54,7 @@ app.use(bodyParser.json())
 
 //routes
 app.use("/", userRouter)
-app.use("/admin", adminRouter)
+app.use("/paystack", paystackRouter)
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() =>{

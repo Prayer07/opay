@@ -1,6 +1,6 @@
 import express from "express"
 import Opay from "../models/user.model.js"
-import { signup, login, addMoney, withdraw, transfer, dashboard, userInfo, getTransactions} from "../controllers/user.controller.js"
+import { signup, login, addMoney, withdraw, transfer, dashboard, userInfo, getTransactions,changePassword} from "../controllers/user.controller.js"
 import { authenticateToken } from "../middleware/authMiddleware.js"
 import { verifyToken } from "../middleware/auth.js"
 
@@ -21,5 +21,8 @@ router.post("/withdraw", verifyToken, withdraw)
 router.post("/transfer", verifyToken, transfer)
 
 router.get("/transactions", verifyToken, getTransactions)
+
+router.post("/change-password", verifyToken, changePassword)
+
 
 export default router
