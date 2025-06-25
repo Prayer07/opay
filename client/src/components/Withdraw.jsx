@@ -1,7 +1,4 @@
 import React from 'react'
-import contact from "../assets/contact.png"
-import bank from "../assets/bank.png"
-import arrowUp from "../assets/right-up.png"
 import { Link } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import {
@@ -22,28 +19,32 @@ function Withdraw() {
         <div className="withdraw-container">
 
         
-      <Card>
+      {/* <Card> */}
         <CardContent>
           <div className="add">
             <Link to={"/add-money"}>
             <Button>
+              <p>
               Deposit
+              </p>
             </Button>
             </Link>
           </div>
         </CardContent>
-      </Card>
-      <Card>
+      {/* </Card> */}
+      {/* <Card> */}
         <CardContent>
           <div className="Transfer">
             <Link to={"/transfer"}>
             <Button>
-              Transfer
+              <p>
+                Transfer
+              </p>
             </Button>
             </Link>
           </div>
         </CardContent>
-      </Card>
+      {/* </Card> */}
       </div>
       </Card>
     </div>

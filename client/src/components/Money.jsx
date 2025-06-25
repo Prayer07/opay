@@ -1,7 +1,4 @@
 import React from 'react'
-import logo from "../assets/secure.png"
-import next from "../assets/next.png"
-import plus from "../assets/plus2.png"
 import { Link } from 'react-router-dom'
 import { Button } from "@/components/ui/button"
 import {

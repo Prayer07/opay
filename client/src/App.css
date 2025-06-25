@@ -1,15 +1,37 @@
+body{
+    background-color: hsl(0, 0%, 15%);
+    color: white;
+}
 .login{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100dvh;
+    /* filter: drop-shadow(5px 5px 5px rgb(107, 77, 45)); */
+    filter: drop-shadow(5px 5px 5px black);
+}
+.login-card{
+    background-color: black;
+    color: white;
+}
+Button:hover{
+    background-color: rgb(54, 48, 48);
 }
 
 .Dashboard{
-    width: 100%;
+    /* width: 100%; */
+    padding-top: 30px;
+    position: relative;
 }
 .Dashboard h4{
-    font-size: 4dvh;
+    /* font-size: 4dvh; */
+}
+.dashboard-container nav{
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-container nav span:hover{
+    font-weight: bolder;
 }
 
 .trans{
@@ -17,43 +39,60 @@
     justify-content: space-between;
 }
 .trans p{
-    font-size: 3dvh;
+    /* font-size: 3dvh; */
 }
 #transaction:hover{
     font-weight: bolder;
 }
 
+.Money{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    filter: drop-shadow(5px 5px 5px black);
+}
 .money{
     display: flex;
     justify-content: space-between;
 }
 
 .money p{
-    font-size: 3dvh;
+    /* font-size: 3dvh; */
     font-weight: bolder;
 }
 
+.Withdraw{
+    filter: drop-shadow(5px 5px 5px black);
+    margin-bottom: 20px;
+}
 .withdraw-container{
     display: flex;
     justify-content: space-around;
+    filter: drop-shadow(2px 2px 2px rgb(14, 15, 2));
 }
 
 .bills{
     display: grid;
     grid-template-columns:repeat(auto-fit, minmax(135px,1fr));
-    gap: 10px;
+    gap: 2px;
+    filter: drop-shadow(5px 5px 5px black);
 }
 .bills p{
     text-align: center;
 }
+.bills Button{
+    filter: drop-shadow(2px 2px 2px rgb(14, 15, 2));
+}
 
 .transHistory h1{
-    font-size: 4dvh;
+    /* font-size: 4dvh; */
     text-align: center;
-    margin: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
 }
 .transHistory li{
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .add-money1{
@@ -70,6 +109,45 @@
     height: 100dvh;
 }
 
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav p{
+    font-size: 4dvh;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    font-size: 3dvh;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 320px) {
+    body{
+        background-color: rgba(251, 222, 4, 0.893);
+        /* font-size: 4.5dvh; */
+    }
+    .Dashboard{
+    height: 103dvh;
+    }
+    .Money{
+        font-size: 2.5dvh;
+    }
+    .Withdraw p{
+        font-size: 2.5dvh;
+    }
+}
 
 /* *{
     margin: 0;

@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import bell from "../assets/bell.png"
-import headphones from "../assets/headphones.png"
-import scanner from "../assets/scanner.png"
 import Money from './Money'
 import Withdraw from './Withdraw'
 import Bills from './Bills'
 import Logout from './Logout'
-import plus from "../assets/plus2.png"
 import {io} from "socket.io-client"
 import AnimatedCounter from './AnimatedCounter'
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardAction,
@@ -19,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import ChangePassword from './ChangePassword'
 
 const socket = io("http://localhost:3001")
 
@@ -82,25 +80,37 @@ function Dashboard() {
   return (
     <>
       <div className="Dashboard" >
-        <div className="dashboard-container">
-        <Card>
+        {/* <div className="dashboard-container"> */}
+        {/* <Card> */}
         <CardHeader>
-          <CardTitle><h4>Hi, {user.fname? `${user.fname}` : "User"} </h4></CardTitle>
+          <CardTitle>
+            <nav>
+              <p>Hi, {user.fname? `${user.fname}` : "User"}</p>
+              <Logout/>
+              {/* <Link to={"/change-password"}><span>ChangePassword</span></Link> */}
+            </nav>
+          </CardTitle> 
         </CardHeader>
 
         <CardContent>
-          <Money bal={<AnimatedCounter bal={user.balance}/>} plus={plus} add = { "Add money" }/>
+          <Money bal={<AnimatedCounter bal={user.balance}/>} add = { "Add money" }/>
         </CardContent>
 
         <CardContent>
           <Withdraw/>
         </CardContent>
 
-        <CardContent>
+        {/* <CardContent>
           <Bills/>
-        </CardContent>
-      </Card>
-      </div>
+        </CardContent> */}
+
+      {/* </Card> */}
+      {/* </div> <br /> */}
+        <footer>
+            <p>
+              mmm
+            </p>
+        </footer>
       </div>
     </>
   )

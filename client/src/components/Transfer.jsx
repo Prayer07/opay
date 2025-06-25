@@ -62,8 +62,9 @@ export default function Transfer() {
                 alert(data.message)
                 setAmount("")
                 setReceiverPhone("")
-                navigate("/dashboard")
-                
+                setTimeout(() =>{
+                  navigate("/dashboard")
+                }, 2000)
             }else{
                 alert(data.message || "Transfer failed")
             }

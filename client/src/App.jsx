@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Route,Routes} from 'react-router-dom'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Homepage from './components/Homepage'
@@ -10,6 +11,8 @@ import Transfer from './components/Transfer'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import WithdrawMoney from './components/WithdrawMoney'
 import TransactionHistory from './components/TransactionHistory'
+import ChangePassword from './components/ChangePassword'
+import Airtime from './components/Airtime'
 
 function App() {
   return (
@@ -46,6 +49,18 @@ function App() {
       <Route path='/transactions' element={
         <ProtectedRoutes>
           <TransactionHistory/>
+        </ProtectedRoutes>
+      } />
+
+      <Route path='/change-password' element={
+        <ProtectedRoutes>
+          <ChangePassword/>
+        </ProtectedRoutes>
+      } />
+
+      <Route path='/initialize-payment' element={
+        <ProtectedRoutes>
+          <Airtime/>
         </ProtectedRoutes>
       } />
 

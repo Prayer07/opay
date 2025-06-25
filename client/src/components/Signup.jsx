@@ -26,6 +26,7 @@ function Signup() {
 
   const [message, setMessage] = useState({});
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) =>{
 
@@ -81,6 +82,8 @@ function Signup() {
       return
     }
 
+    setLoading(true)
+
     try {
       const res = await fetch("http://localhost:3000/signup",{
         method: "POST",
@@ -100,13 +103,15 @@ function Signup() {
     } catch (err) {
       console.error(err)
       setMessage({general: "Something went wrong"})
+    }finally{
+      setLoading(false)
     }
   }
 
   return (
     <>
             <div className="login">
-              <Card className="w-full max-w-sm">
+              <Card className="w-full max-w-sm login-card">
               <CardHeader>
                 <CardTitle>Create your account</CardTitle>
                 <CardDescription>
@@ -145,21 +150,16 @@ function Signup() {
                     <div className="grid gap-2">
                       <div className="flex items-center">
                         <Label htmlFor="password">Password</Label>
-                        <a
-                          href="#"
-                          className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                        >
-                          Forgot your password?
-                        </a>
                       </div>
                       <Input type="password" inputMode='numeric' pattern='[0-9]{6}' 
                       placeholder='6 digit password' name='password' value={user.password}
                       onChange={handleChange} maxLength={6} />
                       <p style={{color:"red"}}>{message.password}</p>
                     </div>
-                  </div> <br /> 
+                  </div>
+                  {loading && <p style={{color:"white", textAlign:"center", paddingTop:"15px"}}> loading... </p>} <br />
                     <Button type="submit"  className="w-full">
-                      Sign up
+                      Create account
                     </Button> <br />
                 </form>
               </CardContent>

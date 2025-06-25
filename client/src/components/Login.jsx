@@ -23,6 +23,7 @@ function Login() {
   const navigate = useNavigate()
   const [message, setMessage] = useState("")
   const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) =>{
 
@@ -49,6 +50,8 @@ function Login() {
       return
     }
 
+    setLoading(true)
+
     try {
       const res = await fetch("http://localhost:3000/login", {
         method: "POST",
@@ -70,13 +73,15 @@ function Login() {
     } catch (err) {
       console.error(err)
       setError("Server error. Try again")
+    }finally{
+      setLoading(false)
     }
   }
 
   return (
     <>
     <div className="login">
-      <Card className="w-full max-w-sm">
+      <Card className="w-full max-w-sm login-card">
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
         <CardDescription>
@@ -84,7 +89,7 @@ function Login() {
         </CardDescription>
         <CardAction>
           <Link to={"/signup"}>
-          <Button>Sign Up</Button>
+          <Button>Create Account</Button>
           </Link>
         </CardAction>
       </CardHeader>
@@ -114,7 +119,8 @@ function Login() {
           </div>
 
             {error && <p style={{color:"red"}}> {error} </p>}
-            {message && <p style={{color:"green"}}> {message} </p>} <br />
+            {message && <p style={{color:"green"}}> {message} </p>}
+            {loading && <p style={{color:"white", textAlign:"center", paddingTop:"15px"}}> loading... </p>} <br />
 
             <Button type="submit"  className="w-full">
               Login
