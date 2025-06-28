@@ -53,7 +53,7 @@ function Login() {
     setLoading(true)
 
     try {
-      const res = await fetch("https://opay-server-inky.vercel.app/login", {
+      const res = await fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(user),

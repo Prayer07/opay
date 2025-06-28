@@ -45,7 +45,7 @@ function AddMoney() {
         
         try {
             
-            const res = await fetch("https://opay-server-inky.vercel.app/add-money", {
+            const res = await fetch("http://localhost:3000/add-money", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

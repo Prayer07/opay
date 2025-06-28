@@ -85,7 +85,7 @@ function Signup() {
     setLoading(true)
 
     try {
-      const res = await fetch("https://opay-server-inky.vercel.app/signup",{
+      const res = await fetch("http://localhost:3000/signup",{
         method: "POST",
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(user),
