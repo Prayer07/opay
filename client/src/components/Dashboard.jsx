@@ -4,7 +4,6 @@ import Money from './Money'
 import Withdraw from './Withdraw'
 import Bills from './Bills'
 import Logout from './Logout'
-import {io} from "socket.io-client"
 import AnimatedCounter from './AnimatedCounter'
 import { Button } from "@/components/ui/button"
 import {
@@ -18,8 +17,6 @@ import {
 } from "@/components/ui/card"
 import ChangePassword from './ChangePassword'
 
-const socket = io("http://localhost:3001")
-
 function Dashboard() {
 
   const [user, setUser] = useState({
@@ -28,29 +25,29 @@ function Dashboard() {
     balance: "",
   })
 
-  useEffect(() =>{
-      const token = sessionStorage.getItem("token")
-      if(!token) return
+  // useEffect(() =>{
+  //     const token = sessionStorage.getItem("token")
+  //     if(!token) return
 
-        const base64PayLoad = token.split('.')[1]
-        const phone = JSON.parse(atob(base64PayLoad)).phone
+  //       const base64PayLoad = token.split('.')[1]
+  //       const phone = JSON.parse(atob(base64PayLoad)).phone
 
-        console.log("Registering socket for", phone)
-        socket.emit("register", phone)
+  //       console.log("Registering socket for", phone)
+  //       socket.emit("register", phone)
 
-        fetchUserData()
+  //       fetchUserData()
 
-        socket.on("refreshUserData", () =>{
-          console.log("Refreshing user data due to socket event")
-          fetchUserData()
-        })
+  //       socket.on("refreshUserData", () =>{
+  //         console.log("Refreshing user data due to socket event")
+  //         fetchUserData()
+  //       })
 
-      return () =>{
-        socket.off("refreshUserData")        
-        socket.disconnect()
-      } 
+  //     return () =>{
+  //       socket.off("refreshUserData")        
+  //       socket.disconnect()
+  //     } 
 
-  }, [])
+  // }, [])
 
   const fetchUserData = async () => {
 

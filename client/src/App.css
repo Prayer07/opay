@@ -23,9 +23,9 @@ Button:hover{
     padding-top: 30px;
     position: relative;
 }
-.Dashboard h4{
+/* .Dashboard h4{
     /* font-size: 4dvh; */
-}
+/* } */
 .dashboard-container nav{
     display: flex;
     justify-content: space-between;
@@ -38,9 +38,9 @@ Button:hover{
     display: flex;
     justify-content: space-between;
 }
-.trans p{
+/* .trans p{
     /* font-size: 3dvh; */
-}
+/* } */
 #transaction:hover{
     font-weight: bolder;
 }
@@ -134,10 +134,10 @@ footer{
 }
 
 @media (max-width: 320px) {
-    body{
-        background-color: rgba(251, 222, 4, 0.893);
+    /* body{ */
+        /* background-color: rgba(251, 222, 4, 0.893); */
         /* font-size: 4.5dvh; */
-    }
+    /* } */
     .Dashboard{
     height: 103dvh;
     }
