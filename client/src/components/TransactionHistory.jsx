@@ -24,7 +24,7 @@ function TransactionHistory() {
                 setLoading(true)
 
             try {
-                const res = await fetch("http://localhost:3000/transactions", {
+                const res = await fetch("https://opay-server-inky.vercel.app/transactions", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

@@ -15,7 +15,7 @@ function WithdrawMoney() {
     setLoading(true)
 
     try {
-      const res = await fetch("http://localhost:3000/withdraw", {
+      const res = await fetch("https://opay-server-inky.vercel.app/withdraw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

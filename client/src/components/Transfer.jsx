@@ -47,7 +47,7 @@ export default function Transfer() {
         setLoading(true)
 
         try {
-            const res = await fetch("http://localhost:3000/transfer", {
+            const res = await fetch("https://opay-server-inky.vercel.app/transfer", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -13,7 +13,12 @@ const port = 3000
 
 
 //middleware
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://opay07-prayer07s-projects.vercel.app/"],
+        methods: ["POST", "GET"],
+    }
+))
 app.use(bodyParser.json())
 
 //routes

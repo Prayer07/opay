@@ -54,7 +54,7 @@ function Dashboard() {
     const token = sessionStorage.getItem("token")
 
         try {
-        const res = await fetch("http://localhost:3000/user-info", {
+        const res = await fetch("https://opay-server-inky.vercel.app/user-info", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
