@@ -101,6 +101,5 @@ function Bills() {
 
 
       </div> */}
-      // xsyx
 
 export default Bills
