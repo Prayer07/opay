@@ -58,11 +58,11 @@ function App() {
         </ProtectedRoutes>
       } />
 
-      <Route path='/initialize-payment' element={
+      {/* <Route path='/initialize-payment' element={
         <ProtectedRoutes>
           <Airtime/>
         </ProtectedRoutes>
-      } />
+      } /> */}
 
     </Routes>
     </>
